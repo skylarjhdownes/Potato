@@ -11,7 +11,7 @@ public class Potato implements Tuber {
   private final List<Condiment> condiments = new ArrayList<Condiment>();
   
   public static void main(String[] args) {
-    Potato potato = new Potato();
+    AmandinePotato potato = new AmandinePotato();
     GLaDOS glados = new GLaDOS();
     
     if (potato.prepare()) System.out.println("Of course potato is prepared and delicious.");
@@ -27,6 +27,11 @@ public class Potato implements Tuber {
     synchronized (condiments) {
       for (String condimentName : names) condiments.add(new Condiment(condimentName));
     }
+  }
+  
+  public void setColors(Color newSkinColor, Color newFleshColor) {
+    skinColor = newSkinColor;
+    fleshColor = newFleshColor;
   }
 
   @Override
@@ -55,5 +60,15 @@ public class Potato implements Tuber {
       public boolean isDelicious() {
         return false; // robots are not delicious
       }
+  }
+  private static class AdirondackBluePotato extends Potato {
+    private AdirondackBluePotato() {
+      setColors(Color.BLUE, Color.BLUE);
+    }
+  }
+  public static class AmandinePotato extends Potato{
+    public AmandinePotato() {
+      setColors(Color.YELLOW, Color.WHITE);
+    }
   }
 }
