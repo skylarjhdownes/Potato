@@ -2,14 +2,18 @@ package org.drtshock;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.awt.Color;
 
 public class Potato implements Tuber {
   
+  private Color skinColor;
+  private Color fleshColor;
   private final List<Condiment> condiments = new ArrayList<Condiment>();
-
+  
   public static void main(String[] args) {
     Potato potato = new Potato();
     GLaDOS glados = new GLaDOS();
+    
     if (potato.prepare()) System.out.println("Of course potato is prepared and delicious.");
     else System.err.println("Fatal error! How could potato not be delicious?");
   }
