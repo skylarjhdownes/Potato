@@ -27,7 +27,7 @@ public class Potato implements Tuber {
 
   @Override
   public boolean isDelicious() {
-    return true; // obviously, potatos are always delicious
+    return true; // obviously, potatoes are always delicious
   }
 
   private class Condiment {
