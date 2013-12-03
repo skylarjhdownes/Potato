@@ -11,10 +11,11 @@ public class Potato implements Tuber {
   private final List<Condiment> condiments = new ArrayList<Condiment>();
   
   public static void main(String[] args) {
-    AmandinePotato potato = new AmandinePotato();
+    AmandinePotato amadinePotato = new AmandinePotato();
+    AdirondackBluePotato adirondackBluePotato = new AdirondackBluePotato();
     GLaDOS glados = new GLaDOS();
     
-    if (potato.prepare()) System.out.println("Of course potato is prepared and delicious.");
+    if (amadinePotato.prepare()) System.out.println("Of course potato is prepared and delicious.");
     else System.err.println("Fatal error! How could potato not be delicious?");
   }
 
@@ -61,13 +62,34 @@ public class Potato implements Tuber {
         return false; // robots are not delicious
       }
   }
+  
   private static class AdirondackBluePotato extends Potato {
     private AdirondackBluePotato() {
       setColors(Color.BLUE, Color.BLUE);
     }
   }
+  
+  public static class AdirondackRedPotato extends Potato{
+    public AdirondackRedPotato() {
+      setColors(Color.RED, Color.RED);
+    }
+  }
+  
   public static class AmandinePotato extends Potato{
     public AmandinePotato() {
+      setColors(Color.YELLOW, Color.WHITE);
+    }
+  }
+  
+  public static class RangerRussetPotato extends Potato{
+    public RangerRussetPotato() {
+      setColors(new Color(100, 75, 40), //BROWN
+              Color.WHITE);
+    }
+  }
+  
+  public static class RussetBurbankPotato extends Potato{
+    public RussetBurbankPotato() {
       setColors(Color.YELLOW, Color.WHITE);
     }
   }
